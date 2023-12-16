@@ -105,7 +105,7 @@ public class Main {
         }
 
         //기사 옮기기
-        if(go && command!=idx){
+        if(go){
             knight.set(idx-1, new int[] {r+dr[dir], c+dc[dir], h, w, k, attack});
             for(int i=r ; i<r+h ; i++){
                 for(int j=c ; j<c+w ; j++){
@@ -114,7 +114,7 @@ public class Main {
                     zone[i+dr[dir]][j+dc[dir]] = idx;
                 }
             }
-            kill(idx);
+            if(command!=idx)kill(idx);
         }
 
         return go;
